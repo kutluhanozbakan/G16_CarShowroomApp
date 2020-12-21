@@ -5,95 +5,83 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
+
+    <TextView
         android:id="@+id/CarBrand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="19dp"
-        android:ems="10"
-        android:hint="@string/car_name_hint"
-        android:inputType="textPersonName"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/CarType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="25dp"
-        android:ems="10"
-        android:hint="@string/car_model_hint"
-        android:inputType="textMultiLine"
+        android:layout_marginTop="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CarBrand" />
 
-    <EditText
+    <TextView
         android:id="@+id/CarCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="25dp"
-        android:ems="10"
-        android:hint="@string/car_cost_hint"
-        android:inputType="textMultiLine"
+        android:layout_marginTop="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CarType" />
 
-    <EditText
+    <TextView
         android:id="@+id/CarDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="25dp"
-        android:ems="10"
-        android:hint="@string/car_date_hint"
-        android:inputType="textMultiLine"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CarCost" />
 
-    <CheckBox
-        android:id="@+id/checkBoxRent"
+    <TextView
+        android:id="@+id/textView_Rent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="15dp"
+        android:background="@color/lightgrey"
         android:text="@string/rent_text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxSale" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView_Sale"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <CheckBox
-        android:id="@+id/checkBoxSale"
+    <TextView
+        android:id="@+id/textView_Sale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="52dp"
+        android:background="@color/lightgrey"
         android:text="@string/sale_text"
+        app:layout_constraintBottom_toTopOf="@+id/buttonDone"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/CarDate" />
-
+        app:layout_constraintTop_toBottomOf="@+id/CarDate" />
 
     <Button
-        android:id="@+id/buttonCancel"
+        android:id="@+id/buttonEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="40dp"
-        android:text="@string/cancel_button"
+        android:layout_margin="10dp"
+        android:text="@string/button_edit"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxSale"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_Sale" />
 
     <Button
         android:id="@+id/buttonDone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="@string/ok_button"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonCancel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/buttonCancel" />
+        android:layout_margin="10dp"
+        android:text="@string/button_delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_Rent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

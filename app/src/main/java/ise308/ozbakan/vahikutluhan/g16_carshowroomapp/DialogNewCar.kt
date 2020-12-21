@@ -14,13 +14,13 @@ class DialogNewCar: DialogFragment() {
         val builder = AlertDialog.Builder(activity!!)
         val inflater = activity!!.layoutInflater
         val dialogLayout = inflater.inflate(R.layout.dialog_new_car, null)
-        val editCarbrand = dialogLayout.findViewById<EditText>(R.id.editCarbrand)
-        val editCarType = dialogLayout.findViewById<EditText>(R.id.editCarType)
-        val editCarCost = dialogLayout.findViewById<EditText>(R.id.editCarCost)
-        val editCarDate = dialogLayout.findViewById<EditText>(R.id.editCarDate)
+        val editCarbrand = dialogLayout.findViewById<EditText>(R.id.CarBrand)
+        val editCarType = dialogLayout.findViewById<EditText>(R.id.CarType)
+        val editCarCost = dialogLayout.findViewById<EditText>(R.id.CarCost)
+        val editCarDate = dialogLayout.findViewById<EditText>(R.id.CarDate)
         val checkBoxRent = dialogLayout.findViewById<CheckBox>(R.id.checkBoxRent)
         val checkBoxSale = dialogLayout.findViewById<CheckBox>(R.id.checkBoxSale)
-        val buttonOk = dialogLayout.findViewById<Button>(R.id.buttonOk)
+        val buttonOk = dialogLayout.findViewById<Button>(R.id.buttonDone)
         val buttonCancel = dialogLayout.findViewById<Button>(R.id.buttonCancel)
 
         builder.setView(dialogLayout)

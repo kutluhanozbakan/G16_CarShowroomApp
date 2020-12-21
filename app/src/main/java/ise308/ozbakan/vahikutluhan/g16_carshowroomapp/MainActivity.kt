@@ -23,21 +23,19 @@ class MainActivity : AppCompatActivity() {
 
         val fabNewCar = findViewById<FloatingActionButton>(R.id.floatingActionButton)
 
-        fabNewCar.setOnClickListener{
+        fabNewCar.setOnClickListener {
             val dialog = DialogNewCar()
             dialog.show(supportFragmentManager, "124")
         }
-        jsonSerializer = JSONSerializer("Car Showroom",applicationContext)
-        try
-        {
+        jsonSerializer = JSONSerializer("Car Showroom", applicationContext)
+        try {
             carList = jsonSerializer!!.load()
-        }catch (e: Exception)
-        {
+        } catch (e: Exception) {
             carList = ArrayList()
         }
         recyclerView = findViewById<View>(R.id.recyclerView)
                 as RecyclerView
-        adapter = CarAdapter(this,carList!!)
+        adapter = CarAdapter(this, carList!!)
         val layoutManager = LinearLayoutManager(applicationContext)
         recyclerView!!.layoutManager = layoutManager
         recyclerView!!.itemAnimator = DefaultItemAnimator()
@@ -46,9 +44,14 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun createNewCar(n: Car)
-    {
+    fun createNewCar(n: Car) {
         carList!!.add(n)
         adapter!!.notifyDataSetChanged()
+    }
+
+    fun showCar(carToShow: Int) {
+        val showDialog = DialogShowCar()
+        carList?.get(carToShow)?.let { showDialog.sendCarSelected(it) }
+        showDialog.show(supportFragmentManager, " ")
     }
 }

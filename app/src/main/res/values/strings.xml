@@ -2,6 +2,7 @@
     <string name="app_name">G16_CarShowroomApp</string>
     <string name="hello_world" translatable="false">Hello world!</string>
     <string name="action_add">Add</string>
+
     <string name="car_name_hint">Car Name</string>
     <string name="car_model_hint">Car Model</string>
     <string name="car_cost_hint">Car Cost</string>
@@ -16,6 +17,8 @@
     <string name="theme_dark" translatable="false">Dark</string>
     <string name="button_done" translatable="false">Done</string>
     <string name="title_activity_settings">Options</string>
-    <string name="add_new_note">Add a new note</string>
-    <string name="your_note">Your note</string>”
+    <string name="add_new_car">Add New Car</string>
+    <string name="your_car">Your Car</string>
+    <string name="button_delete">Delete</string>
+    <string name="button_edit">Edit</string>”
 </resources>

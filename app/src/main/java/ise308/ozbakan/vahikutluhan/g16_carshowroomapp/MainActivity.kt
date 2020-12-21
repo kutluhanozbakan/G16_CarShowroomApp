@@ -2,6 +2,7 @@ package ise308.ozbakan.vahikutluhan.g16_carshowroomapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -11,7 +12,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
-
+private val TAG = "MainActivity"
     private var carList: ArrayList<Car>? = null
     private var adapter: CarAdapter? = null
     private var recyclerView: RecyclerView? = null
@@ -42,6 +43,8 @@ class MainActivity : AppCompatActivity() {
         recyclerView!!.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
         recyclerView!!.adapter = adapter
 
+
+
     }
 
     fun createNewCar(n: Car) {
@@ -54,4 +57,22 @@ class MainActivity : AppCompatActivity() {
         carList?.get(carToShow)?.let { showDialog.sendCarSelected(it) }
         showDialog.show(supportFragmentManager, " ")
     }
+    private fun saveNotes()
+    {
+        try {
+            jsonSerializer!!.save(this.carList!!)
+        }catch (e: Exception)
+        {
+            Log.i(TAG, "Error loading notes")
+        }
+
+    }
+    override fun onPause()
+    {
+        super.onPause()
+        saveNotes()
+    }
+
+
+
 }

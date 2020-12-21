@@ -13,6 +13,7 @@ class DialogShowCar : DialogFragment() {
 
     private var car: Car? = null
 
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
         val builder = AlertDialog.Builder(this.activity!!)
@@ -42,9 +43,8 @@ class DialogShowCar : DialogFragment() {
         if (!car!!.rent) {
             textViewRent.visibility = View.GONE
         }
-        buttonDelete.setOnClickListener {
-           //operations for deleting
-        }
+
+
         buttonEdit.setOnClickListener {
             //operations for editing, might be more complicated though.
         }
@@ -53,7 +53,10 @@ class DialogShowCar : DialogFragment() {
         return builder.create()
 
 
+
+
     }
+
 
     fun sendCarSelected(carSelected: Car) {
 

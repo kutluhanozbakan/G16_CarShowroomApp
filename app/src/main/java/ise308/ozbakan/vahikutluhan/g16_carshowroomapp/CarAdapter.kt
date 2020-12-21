@@ -1,5 +1,6 @@
 package ise308.ozbakan.vahikutluhan.g16_carshowroomapp
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,11 +22,12 @@ class CarAdapter(private val mainActivity: MainActivity, private val carList: Li
         }
 
         override fun onClick(v: View?) {
-            mainActivity.showCar(adapterPosition)
+           // mainActivity.showCar(adapterPosition)
+            val intentToCarPager = Intent(itemView!!.context,CarPagerActivity::class.java)
+            itemView.context.startActivity(intentToCarPager)
         }
 
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarAdapter.ListItemHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.listcars, parent, false)

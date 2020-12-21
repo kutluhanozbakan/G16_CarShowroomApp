@@ -25,7 +25,8 @@ class DialogShowCar : DialogFragment() {
         val textViewCarDate = dialogLayout.findViewById<TextView>(R.id.CarDate)
         val textViewSale = dialogLayout.findViewById<TextView>(R.id.textView_Sale)
         val textViewRent = dialogLayout.findViewById<TextView>(R.id.textView_Rent)
-        val buttonDone = dialogLayout.findViewById<Button>(R.id.buttonDone)
+        val buttonDelete = dialogLayout.findViewById<Button>(R.id.buttonDelete)
+        val buttonEdit = dialogLayout.findViewById<Button>(R.id.buttonEdit)
         textViewCarBrand.text = car!!.brand
 
         textViewCarType.text =
@@ -41,8 +42,11 @@ class DialogShowCar : DialogFragment() {
         if (!car!!.rent) {
             textViewRent.visibility = View.GONE
         }
-        buttonDone.setOnClickListener {
-            dismiss()
+        buttonDelete.setOnClickListener {
+           //operations for deleting
+        }
+        buttonEdit.setOnClickListener {
+            //operations for editing, might be more complicated though.
         }
         builder.setView(dialogLayout)
                 .setMessage("Your Car")

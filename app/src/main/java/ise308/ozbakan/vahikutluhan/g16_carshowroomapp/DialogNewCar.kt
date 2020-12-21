@@ -20,7 +20,7 @@ class DialogNewCar: DialogFragment() {
         val editCarDate = dialogLayout.findViewById<EditText>(R.id.CarDate)
         val checkBoxRent = dialogLayout.findViewById<CheckBox>(R.id.checkBoxRent)
         val checkBoxSale = dialogLayout.findViewById<CheckBox>(R.id.checkBoxSale)
-        val buttonOk = dialogLayout.findViewById<Button>(R.id.buttonDone)
+        val buttonOk = dialogLayout.findViewById<Button>(R.id.buttonDelete)
         val buttonCancel = dialogLayout.findViewById<Button>(R.id.buttonCancel)
 
         builder.setView(dialogLayout)

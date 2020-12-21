@@ -59,7 +59,7 @@
         android:layout_marginTop="52dp"
         android:background="@color/lightgrey"
         android:text="@string/sale_text"
-        app:layout_constraintBottom_toTopOf="@+id/buttonDone"
+        app:layout_constraintBottom_toTopOf="@+id/buttonDelete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CarDate" />
@@ -75,7 +75,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_Sale" />
 
     <Button
-        android:id="@+id/buttonDone"
+        android:id="@+id/buttonDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"

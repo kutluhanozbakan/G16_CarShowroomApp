@@ -47,6 +47,7 @@ private val TAG = "MainActivity"
 
     }
 
+
     fun createNewCar(n: Car) {
         carList!!.add(n)
         adapter!!.notifyDataSetChanged()
@@ -57,6 +58,8 @@ private val TAG = "MainActivity"
         carList?.get(carToShow)?.let { showDialog.sendCarSelected(it) }
         showDialog.show(supportFragmentManager, " ")
     }
+
+
     private fun saveNotes()
     {
         try {

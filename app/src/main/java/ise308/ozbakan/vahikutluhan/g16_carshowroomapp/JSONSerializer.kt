@@ -1,6 +1,7 @@
 package ise308.ozbakan.vahikutluhan.g16_carshowroomapp
 
 import android.content.Context
+import android.util.Log
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONTokener
@@ -8,6 +9,8 @@ import java.io.*
 import java.lang.StringBuilder
 
 class JSONSerializer(private val filename : String, private val context: Context) {
+    var cars = ArrayList<Car>()
+
     @Throws(IOException::class, JSONException::class)
     fun save(carList: List<Car>) {
         val jsonArray = JSONArray()
@@ -53,6 +56,18 @@ class JSONSerializer(private val filename : String, private val context: Context
         } finally {
             reader!!.close()
         }
+        cars = carList
         return carList
+    }
+
+    fun delete(car: Car){
+        load()
+        for (i in 0 until cars.size){
+            if (car.carprice == cars[i].carprice){
+                cars.removeAt(i)
+            }
+        }
+        Log.e("Size",cars.size.toString())
+        save(cars)
     }
 }

@@ -12,7 +12,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
-private val TAG = "MainActivity"
+    private val TAG = "MainActivity"
     private var carList: ArrayList<Car>? = null
     private var adapter: CarAdapter? = null
     private var recyclerView: RecyclerView? = null
@@ -43,8 +43,6 @@ private val TAG = "MainActivity"
         recyclerView!!.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
         recyclerView!!.adapter = adapter
 
-
-
     }
 
 
@@ -57,6 +55,11 @@ private val TAG = "MainActivity"
         val showDialog = DialogShowCar()
         carList?.get(carToShow)?.let { showDialog.sendCarSelected(it) }
         showDialog.show(supportFragmentManager, " ")
+    }
+
+    fun deleteCar()
+    {
+        adapter!!.notifyDataSetChanged()
     }
 
 

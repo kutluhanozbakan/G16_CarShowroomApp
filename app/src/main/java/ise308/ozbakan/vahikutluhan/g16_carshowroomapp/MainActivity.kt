@@ -60,8 +60,8 @@ class MainActivity : AppCompatActivity() {
     fun deleteCar()
     {
         adapter!!.notifyDataSetChanged()
+        saveNotes()
     }
-
 
     private fun saveNotes()
     {

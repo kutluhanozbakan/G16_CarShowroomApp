@@ -9,7 +9,9 @@ import java.io.*
 import java.lang.StringBuilder
 
 class JSONSerializer(private val filename : String, private val context: Context) {
-    var cars = ArrayList<Car>()
+    var cars : ArrayList<Car>?=null
+
+
 
     @Throws(IOException::class, JSONException::class)
     fun save(carList: List<Car>) {
@@ -29,6 +31,7 @@ class JSONSerializer(private val filename : String, private val context: Context
         }
 
     }
+
     //this function is load the current json folder and show the data.
     @Throws(IOException::class, JSONException::class)
     fun load(): ArrayList<Car> {
@@ -62,12 +65,14 @@ class JSONSerializer(private val filename : String, private val context: Context
 
     fun delete(car: Car){
         load()
-        for (i in 0 until cars.size){
-            if (car.carprice == cars[i].carprice){
-                cars.removeAt(i)
+        for (i in 0 until cars!!.size){
+            if (car.carprice == cars!![i].carprice && car.brand == cars!![i].brand && car.cardate == cars!![i].cardate){
+                cars!!.removeAt(i)
             }
         }
-        Log.e("Size",cars.size.toString())
-        save(cars)
+        Log.e("Size",cars!!.size.toString())
+        save(cars!!)
     }
 }
+
+

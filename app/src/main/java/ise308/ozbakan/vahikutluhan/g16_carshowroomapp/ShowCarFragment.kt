@@ -1,5 +1,7 @@
 package ise308.ozbakan.vahikutluhan.g16_carshowroomapp
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 
 class ShowCarFragment : Fragment() {
@@ -20,12 +23,30 @@ class ShowCarFragment : Fragment() {
         jsonSerializer = JSONSerializer("Car Showroom", requireActivity().applicationContext)
         Log.e("car",deletedCar.brand.toString())
         btnDelete.setOnClickListener {
-            deletedCar?.let { car ->
-                jsonSerializer!!.delete(car)
+
+            val dialogBuilder = AlertDialog.Builder(view.context)
+
+
+
+            dialogBuilder.setTitle("Are You Sure?")
+            dialogBuilder.setPositiveButton("Delete") { _: DialogInterface, _: Int ->
+                deletedCar?.let { car ->
+                    jsonSerializer!!.delete(car)
+                }
+
+                val callingActivity = activity as MainActivity?
+                callingActivity!!.deleteCar()
             }
-            //problems here !
-            val callingActivity = activity as MainActivity?
-            callingActivity!!.deleteCar()
+            dialogBuilder.setNegativeButton("Cancel") { _: DialogInterface, _: Int ->
+                Toast.makeText(this.context, "Not Deleted!", Toast.LENGTH_LONG).show()
+            }
+            val b = dialogBuilder.create()
+            b.show()
+
+
+
+
+
         }
         /*btnEdit.setOnClickListener{
 

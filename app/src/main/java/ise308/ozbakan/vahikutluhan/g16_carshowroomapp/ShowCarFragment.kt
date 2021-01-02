@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.viewpager2.widget.ViewPager2
 
 class ShowCarFragment : Fragment() {
     private lateinit var btnDelete: Button
@@ -21,13 +22,10 @@ class ShowCarFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         jsonSerializer = JSONSerializer("Car Showroom", requireActivity().applicationContext)
-        Log.e("car",deletedCar.brand.toString())
+        Log.e("car", deletedCar.brand.toString())
         btnDelete.setOnClickListener {
 
             val dialogBuilder = AlertDialog.Builder(view.context)
-
-
-
             dialogBuilder.setTitle("Are You Sure?")
             dialogBuilder.setPositiveButton("Delete") { _: DialogInterface, _: Int ->
                 deletedCar?.let { car ->
@@ -44,9 +42,6 @@ class ShowCarFragment : Fragment() {
             b.show()
 
 
-
-
-
         }
         /*btnEdit.setOnClickListener{
 
@@ -59,9 +54,9 @@ class ShowCarFragment : Fragment() {
     }
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.car_frame, container, false)
         val tvBrand = view.findViewById<TextView>(R.id.CarBrand)
@@ -86,6 +81,7 @@ class ShowCarFragment : Fragment() {
         if (!arguments!!.getBoolean("Sale")) {
             tvSale.visibility = View.GONE
         }
+
         return view
     }
 
@@ -108,3 +104,4 @@ class ShowCarFragment : Fragment() {
         }
     }
 }
+

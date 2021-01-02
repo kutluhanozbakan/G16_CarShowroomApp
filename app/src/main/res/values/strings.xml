@@ -17,8 +17,12 @@
     <string name="theme_dark" translatable="false">Dark</string>
     <string name="button_done" translatable="false">Done</string>
     <string name="title_activity_settings">Options</string>
-    <string name="add_new_car">Add New Car</string>
+    <string name="add_new_car"><b>Add New Car</b></string>
     <string name="your_car">Your Car</string>
     <string name="button_delete">Delete</string>
-    <string name="button_edit">Edit</string>”
+    <string name="button_edit">Edit</string>
+    <string name="situation"><b>Situation: </b></string>
+    <string name="year"><b>Year: </b></string>
+    <string name="price"><b>Price: </b></string>
+    ”
 </resources>

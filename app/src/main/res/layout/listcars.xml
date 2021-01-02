@@ -15,37 +15,36 @@
         android:id="@+id/TextView_carstatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorRed"
-        android:textSize="24sp"
         android:fontFamily="sans-serif-condensed-light"
-        />
+        android:textColor="@color/colorBlue"
+        android:textSize="20sp" />
+
     <TextView
         android:id="@+id/TextView_carbrand"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorRed"
-        android:textSize="24sp"
         android:fontFamily="sans-serif-condensed-light"
-        />
+        android:textColor="@color/black"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textView_cartype"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:fontFamily="sans-serif-condensed-light"/>
+        android:fontFamily="sans-serif-condensed-light"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView_carcost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed-light"/>
+        android:fontFamily="sans-serif-condensed-light" />
 
     <TextView
         android:id="@+id/textView_cardate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed-light"/>
+        android:fontFamily="sans-serif-condensed-light" />
 
 
 </LinearLayout>

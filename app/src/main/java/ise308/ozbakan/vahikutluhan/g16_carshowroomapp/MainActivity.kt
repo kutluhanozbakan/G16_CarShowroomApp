@@ -25,8 +25,28 @@ class MainActivity : AppCompatActivity() {
         val fabNewCar = findViewById<FloatingActionButton>(R.id.floatingActionButton)
 
         fabNewCar.setOnClickListener {
-            val dialog = DialogNewCar()
-            dialog.show(supportFragmentManager, "124")
+            fabNewCar.animate().apply {
+                duration = 500
+
+                rotationBy(360f)
+                scaleX(2F)
+                scaleY(2F)
+
+            }.withEndAction{
+                fabNewCar.animate().apply {
+                    duration = 1000
+                    rotationBy(360f)
+                    scaleX(1F)
+                    scaleY(1F)
+
+
+                }.withEndAction{
+                    val dialog = EditFragment()
+                    dialog.show(supportFragmentManager, "124")
+                }
+            }.start()
+
+
         }
         jsonSerializer = JSONSerializer("Car Showroom", applicationContext)
         try {

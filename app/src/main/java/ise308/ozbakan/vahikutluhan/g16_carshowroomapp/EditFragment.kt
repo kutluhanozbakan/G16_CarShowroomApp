@@ -9,7 +9,7 @@ import android.widget.EditText
 import androidx.fragment.app.DialogFragment
 import kotlin.text.toInt as toInt
 
-class DialogNewCar: DialogFragment() {
+class EditFragment: DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(activity!!)
         val inflater = activity!!.layoutInflater
@@ -24,11 +24,12 @@ class DialogNewCar: DialogFragment() {
         val buttonCancel = dialogLayout.findViewById<Button>(R.id.buttonCancel)
 
         builder.setView(dialogLayout)
-            .setMessage("Add a new car")
+                .setMessage("Add a new car")
         buttonCancel.setOnClickListener{
             dismiss()
         }
         buttonOk.setOnClickListener{
+
             val newCar = Car()
             newCar.brand = editCarbrand.text.toString()
             newCar.cartype = editCarType.text.toString()

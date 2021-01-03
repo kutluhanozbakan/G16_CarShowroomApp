@@ -43,20 +43,20 @@ class ShowCarFragment : Fragment() {
 
 
         }
-        /*btnEdit.setOnClickListener{
+        btnEdit.setOnClickListener{
 
-            val showDialog = EditCarFragment()
+            val showDialog = EditFragment()
             showDialog.show(activity!!.supportFragmentManager, " ")
 
         }
-         */
+
 
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.car_frame, container, false)
         val tvBrand = view.findViewById<TextView>(R.id.CarBrand)
@@ -104,4 +104,3 @@ class ShowCarFragment : Fragment() {
         }
     }
 }
-

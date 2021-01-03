@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
     android:backgroundTint="#EDEDED">
 
 
@@ -20,7 +21,7 @@
         android:paddingBottom="5dp"
         android:shadowDy="2"
         android:textAllCaps="true"
-        android:textColor="@color/color_blue_light"
+        android:textColor="@color/black"
         android:textSize="28sp"
         android:typeface="monospace"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,8 +34,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/textview_border"
         android:padding="20dp"
-
-        android:textColor="@color/color_blue_light"
+        android:textColor="@color/cardview_dark_background"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/CarBrand"
         app:layout_constraintHorizontal_bias="0.501"
@@ -42,13 +42,59 @@
         app:layout_constraintTop_toBottomOf="@+id/CarBrand" />
 
     <TextView
+        android:id="@+id/textView_Rent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey"
+        android:backgroundTint="@color/grey_tone"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
+        android:text="@string/rent_text"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CarType"
+        app:layout_constraintVertical_bias="0.428" />
+
+    <TextView
+        android:id="@+id/textView_Sale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey"
+        android:backgroundTint="@color/grey_tone"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
+        android:text="@string/sale_text"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CarType"
+        app:layout_constraintVertical_bias="0.428" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:text="@string/price"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/CarCost" />
+
+    <TextView
         android:id="@+id/CarCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-
+        android:layout_marginTop="112dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
+        app:layout_constraintHorizontal_bias="0.33"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CarType" />
 
@@ -56,101 +102,62 @@
         android:id="@+id/CarDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-
+        android:layout_marginTop="32dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
+        app:layout_constraintHorizontal_bias="0.33"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CarCost" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/year"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/situation"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonDelete"
-        app:layout_constraintEnd_toStartOf="@+id/textView_Rent"
-        app:layout_constraintHorizontal_bias="0.098"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.232" />
-
-    <TextView
-        android:id="@+id/textView_Sale"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/light_grey"
-        android:text="@string/sale_text"
-        app:layout_constraintBottom_toTopOf="@+id/buttonDelete"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/CarDate"
-        app:layout_constraintVertical_bias="0.257" />
-
-    <TextView
-        android:id="@+id/textView_Rent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="260dp"
-        android:background="@color/light_grey"
-        android:text="@string/rent_text"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView_Sale"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="28dp"
         android:text="@string/year"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/CarDate"
-        app:layout_constraintStart_toStartOf="@+id/textView3" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/price" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="10dp"
+        android:layout_width="@dimen/ten"
         android:layout_height="22dp"
         android:layout_marginLeft="1dp"
         android:text="$"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="@+id/CarCost"
-        app:layout_constraintHorizontal_bias="0.168"
-        app:layout_constraintStart_toEndOf="@+id/textView" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/price"
-        android:textSize="18sp"
-
-        app:layout_constraintBottom_toBottomOf="@+id/CarCost"
-        app:layout_constraintStart_toStartOf="@+id/textView2" />
+        app:layout_constraintBottom_toBottomOf="@+id/price"
+        app:layout_constraintEnd_toStartOf="@+id/CarCost"
+        app:layout_constraintHorizontal_bias="0.419"
+        app:layout_constraintStart_toEndOf="@+id/price"
+        app:layout_constraintTop_toTopOf="@+id/price" />
 
     <Button
         android:id="@+id/buttonEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:backgroundTint="@color/color_blue_dark"
+        android:layout_margin="@dimen/ten"
+        android:backgroundTint="@color/cardview_dark_background"
         android:text="@string/button_edit"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonDelete"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_Sale" />
+        app:layout_constraintHorizontal_bias="0.827"
+        app:layout_constraintStart_toEndOf="@+id/buttonDelete"
+        app:layout_constraintTop_toTopOf="@+id/buttonDelete"
+        app:layout_constraintVertical_bias="0.497" />
 
     <Button
         android:id="@+id/buttonDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:backgroundTint="@color/color_blue_dark"
+        android:layout_margin="@dimen/twenty"
+        android:layout_marginStart="28dp"
+        android:backgroundTint="@color/cardview_dark_background"
         android:text="@string/button_delete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_Rent" />
+        app:layout_constraintTop_toBottomOf="@+id/year"
+        app:layout_constraintVertical_bias="0.497" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

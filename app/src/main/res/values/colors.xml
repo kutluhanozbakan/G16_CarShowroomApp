@@ -11,4 +11,5 @@
     <color name="color_blue_dark">#01577E</color>
     <color name="light_grey">#F4F4F4</color>
     <color name="red_tint">#F44336</color>
+    <color name="grey_tone">#5D854C</color>
 </resources>

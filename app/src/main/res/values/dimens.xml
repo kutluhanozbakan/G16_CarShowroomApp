@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <resources>
     <dimen name="faction_button_padding">500dp</dimen>
     <dimen name="faction_button_padding_bottom">100dp</dimen>
-    <dimen name="margin_five">5dp</dimen>
-    <dimen name="margin_ten">10dp</dimen>
+    <dimen name="five">5dp</dimen>
+    <dimen name="ten">10dp</dimen>
+    <dimen name="twenty">20dp</dimen>
     <dimen name="text_twenty">20sp</dimen>
     <dimen name="text_fifteen">15sp</dimen>
     <dimen name="text_twentyFour">24sp</dimen>

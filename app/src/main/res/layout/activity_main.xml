@@ -10,7 +10,7 @@
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="30dp"
         android:clickable="true"
         android:paddingLeft="@dimen/faction_button_padding"
         android:paddingBottom="@dimen/faction_button_padding_bottom"

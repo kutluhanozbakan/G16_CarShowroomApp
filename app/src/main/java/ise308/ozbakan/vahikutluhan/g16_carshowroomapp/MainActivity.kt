@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
             }.withEndAction {
                 fabNewCar.animate().apply {
-                    duration = 1000
+                    duration = 100
                     rotationBy(360f)
                     scaleX(1F)
                     scaleY(1F)

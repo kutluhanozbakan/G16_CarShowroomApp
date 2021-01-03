@@ -24,9 +24,7 @@ class JSONSerializer(private val filename: String, private val context: Context)
             writer = OutputStreamWriter(outFile)
             writer.write(jsonArray.toString())
         } finally {
-            if (writer != null) {
-                writer.close()
-            }
+            writer?.close()
         }
 
     }

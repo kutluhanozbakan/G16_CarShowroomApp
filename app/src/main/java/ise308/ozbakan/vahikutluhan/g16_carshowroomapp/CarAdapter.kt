@@ -5,16 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
 
 class CarAdapter(private val mainActivity: MainActivity, private val carList: List<Car>) : RecyclerView.Adapter<CarAdapter.ListItemHolder>() {
     inner class ListItemHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
-        internal var brand = view.findViewById<View>(R.id.TextView_carbrand) as TextView
-        internal var cartype = view.findViewById<View>(R.id.textView_cartype) as TextView
-        internal var carcost = view.findViewById<View>(R.id.textView_carcost) as TextView
-        internal var cardate = view.findViewById<View>(R.id.textView_cardate) as TextView
-        internal var carstatus = view.findViewById<View>(R.id.TextView_carstatus) as TextView
+        internal var brand = view.findViewById<View>(R.id.TextView_carBrand) as TextView
+        internal var cartype = view.findViewById<View>(R.id.textView_carType) as TextView
+        internal var carcost = view.findViewById<View>(R.id.textView_carCost) as TextView
+        internal var cardate = view.findViewById<View>(R.id.textView_carDate) as TextView
+        internal var carstatus = view.findViewById<View>(R.id.TextView_carStatus) as TextView
 
         init { //make it clickable
             view.isClickable = true

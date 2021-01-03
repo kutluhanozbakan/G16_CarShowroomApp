@@ -2,46 +2,47 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    android:layout_marginStart="5dp"
-    android:layout_marginLeft="5dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginEnd="5dp"
-    android:layout_marginRight="5dp"
-    android:layout_marginBottom="5dp"
+    android:layout_margin="@dimen/margin_five"
+    android:layout_marginStart="@dimen/margin_five"
+    android:layout_marginLeft="@dimen/margin_five"
+    android:layout_marginTop="@dimen/margin_five"
+    android:layout_marginEnd="@dimen/margin_five"
+    android:layout_marginRight="@dimen/margin_five"
+    android:layout_marginBottom="@dimen/margin_five"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/TextView_carstatus"
+        android:id="@+id/TextView_carStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed-light"
-        android:textColor="@color/colorBlue"
-        android:textSize="20sp" />
+        android:textColor="@color/color_blue_light"
+        android:textSize="@dimen/text_twenty" />
 
     <TextView
-        android:id="@+id/TextView_carbrand"
+        android:id="@+id/TextView_carBrand"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed-light"
         android:textColor="@color/black"
-        android:textSize="24sp" />
+        android:textSize="@dimen/text_twentyFour" />
+
 
     <TextView
-        android:id="@+id/textView_cartype"
+        android:id="@+id/textView_carType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed-light"
-        android:textSize="20sp" />
+        android:textSize="@dimen/text_twenty" />
 
     <TextView
-        android:id="@+id/textView_carcost"
+        android:id="@+id/textView_carCost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed-light" />
 
     <TextView
-        android:id="@+id/textView_cardate"
+        android:id="@+id/textView_carDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed-light" />

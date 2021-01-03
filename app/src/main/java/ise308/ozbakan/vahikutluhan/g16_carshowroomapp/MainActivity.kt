@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 scaleX(2F)
                 scaleY(2F)
 
-            }.withEndAction{
+            }.withEndAction {
                 fabNewCar.animate().apply {
                     duration = 1000
                     rotationBy(360f)
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                     scaleY(1F)
 
 
-                }.withEndAction{
+                }.withEndAction {
                     val dialog = EditFragment()
                     dialog.show(supportFragmentManager, "124")
                 }
@@ -77,28 +77,24 @@ class MainActivity : AppCompatActivity() {
         showDialog.show(supportFragmentManager, " ")
     }
 
-    fun deleteCar()
-    {
+    fun deleteCar() {
         adapter!!.notifyDataSetChanged()
         saveNotes()
     }
 
-    private fun saveNotes()
-    {
+    private fun saveNotes() {
         try {
             jsonSerializer!!.save(this.carList!!)
-        }catch (e: Exception)
-        {
+        } catch (e: Exception) {
             Log.i(TAG, "Error loading notes")
         }
 
     }
-    override fun onPause()
-    {
+
+    override fun onPause() {
         super.onPause()
         saveNotes()
     }
-
 
 
 }

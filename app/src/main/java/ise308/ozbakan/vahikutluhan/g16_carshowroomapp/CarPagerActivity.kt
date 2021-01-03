@@ -10,10 +10,10 @@ import androidx.viewpager.widget.ViewPager
 import java.lang.Exception
 
 private const val TAG = "CarPagerActivity"
-private var carList: ArrayList<Car> ? = null
-private var jsonSerializer: JSONSerializer?=null
+private var carList: ArrayList<Car>? = null
+private var jsonSerializer: JSONSerializer? = null
 
-class CarPagerActivity: AppCompatActivity() {
+class CarPagerActivity : AppCompatActivity() {
     override fun onCreate(savedInstances: Bundle?) {
         super.onCreate(savedInstances)
         setContentView(R.layout.activity_car_pager)
@@ -37,7 +37,8 @@ class CarPagerActivity: AppCompatActivity() {
     }
 
 
-    class CarPagerAdapter(fm: FragmentManager, private val carFragmentList: ArrayList<Fragment>) : FragmentPagerAdapter(fm, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+    class CarPagerAdapter(fm: FragmentManager, private val carFragmentList: ArrayList<Fragment>) :
+        FragmentPagerAdapter(fm, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
         override fun getItem(position: Int) = carFragmentList[position]
 
         override fun getCount() = carFragmentList.size

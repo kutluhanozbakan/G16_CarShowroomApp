@@ -17,7 +17,10 @@ class SplashActivity : AppCompatActivity() {
         //hiding title bar of this activity
         window.requestFeature(Window.FEATURE_NO_TITLE)
         //making this activity full screen
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
         setContentView(R.layout.logo_splash)
 
         //4second splash time
@@ -26,7 +29,7 @@ class SplashActivity : AppCompatActivity() {
             startActivity(Intent(this@SplashActivity, MainActivity::class.java))
             //finish this activity
             finish()
-        },3000)
+        }, 3000)
 
     }
 }

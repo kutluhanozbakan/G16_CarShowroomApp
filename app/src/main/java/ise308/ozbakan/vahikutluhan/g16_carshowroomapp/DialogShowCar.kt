@@ -31,7 +31,7 @@ class DialogShowCar : DialogFragment() {
         textViewCarBrand.text = car!!.brand
 
         textViewCarType.text =
-                car!!.cartype
+            car!!.cartype
 
 
         textViewCarCost.text = car!!.carprice.toString()
@@ -49,10 +49,8 @@ class DialogShowCar : DialogFragment() {
             //operations for editing, might be more complicated though.
         }
         builder.setView(dialogLayout)
-                .setMessage("Your Car")
+            .setMessage("Your Car")
         return builder.create()
-
-
 
 
     }

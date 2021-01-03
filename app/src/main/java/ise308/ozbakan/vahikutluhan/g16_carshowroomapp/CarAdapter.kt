@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CarAdapter(private val mainActivity: MainActivity, private val carList: List<Car>) : RecyclerView.Adapter<CarAdapter.ListItemHolder>() {
+class CarAdapter(private val mainActivity: MainActivity, private val carList: List<Car>) :
+    RecyclerView.Adapter<CarAdapter.ListItemHolder>() {
     inner class ListItemHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
         internal var brand = view.findViewById<View>(R.id.TextView_carBrand) as TextView
         internal var cartype = view.findViewById<View>(R.id.textView_carType) as TextView
@@ -21,8 +22,8 @@ class CarAdapter(private val mainActivity: MainActivity, private val carList: Li
         }
 
         override fun onClick(v: View?) {
-           // mainActivity.showCar(adapterPosition)
-            val intentToCarPager = Intent(itemView!!.context,CarPagerActivity::class.java)
+            // mainActivity.showCar(adapterPosition)
+            val intentToCarPager = Intent(itemView!!.context, CarPagerActivity::class.java)
             itemView.context.startActivity(intentToCarPager)
         }
 

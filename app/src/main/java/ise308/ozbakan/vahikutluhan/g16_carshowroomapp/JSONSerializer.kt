@@ -8,9 +8,8 @@ import org.json.JSONTokener
 import java.io.*
 import java.lang.StringBuilder
 
-class JSONSerializer(private val filename : String, private val context: Context) {
-    var cars : ArrayList<Car>?=null
-
+class JSONSerializer(private val filename: String, private val context: Context) {
+    var cars: ArrayList<Car>? = null
 
 
     @Throws(IOException::class, JSONException::class)
@@ -48,7 +47,7 @@ class JSONSerializer(private val filename : String, private val context: Context
             }
 
             val jsonArray = JSONTokener(jsonString.toString())
-                    .nextValue() as JSONArray
+                .nextValue() as JSONArray
             for (i in 0 until jsonArray.length()) {
                 carList.add(Car(jsonArray.getJSONObject(i)))
             }
@@ -63,14 +62,14 @@ class JSONSerializer(private val filename : String, private val context: Context
         return carList
     }
 
-    fun delete(car: Car){
+    fun delete(car: Car) {
         load()
-        for (i in 0 until cars!!.size){
-            if (car.carprice == cars!![i].carprice && car.brand == cars!![i].brand && car.cardate == cars!![i].cardate){
+        for (i in 0 until cars!!.size) {
+            if (car.carprice == cars!![i].carprice && car.brand == cars!![i].brand && car.cardate == cars!![i].cardate) {
                 cars!!.removeAt(i)
             }
         }
-        Log.e("Size",cars!!.size.toString())
+        Log.e("Size", cars!!.size.toString())
         save(cars!!)
     }
 }
